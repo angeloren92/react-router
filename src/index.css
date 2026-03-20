@@ -1,7 +1,7 @@
 @import 'bootstrap';
 @import 'bootstrap-icons';
 
-img[alt~="Logo"]{
+img[alt~="Logo"] {
     height: 5rem;
 }
 
@@ -28,3 +28,4 @@ img[alt~="Logo"]{
         bottom: 0.3rem;
     }
 }
+
