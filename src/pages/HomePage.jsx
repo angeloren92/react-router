@@ -1,9 +1,22 @@
 function HomePage() {
 
   return (
-    <>
-      <h1>HOMEPAGE</h1>
-    </>
+    <main className="min-vh-100">
+      <div className="container">
+        <section className="row row-cols-1 row-cols-md-2 py-5">
+          <div className="col">
+            <div className="card">
+              
+            </div>
+          </div>
+          <div className="col">
+            <div className="card"> 
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
   )
 }
 

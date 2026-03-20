@@ -1,11 +1,13 @@
 @import 'bootstrap';
 @import 'bootstrap-icons';
 
+img[alt~="Logo"]{
+    height: 5rem;
+}
+
 .navbar {
 
-    img[alt~="Logo"]{
-        height: 5rem;
-    }
+    border-radius: 0 0 0 1.5rem;
 
     .nav-link {
         font-size: 1.5rem;

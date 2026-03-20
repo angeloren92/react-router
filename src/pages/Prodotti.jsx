@@ -16,7 +16,7 @@ function Prodotti() {
   }, [])
 
   return (
-    <main className=" bg-dark  min-vh-100">
+    <main className="min-vh-100">
       <div className="container">
         <section className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 py-5">
           {
