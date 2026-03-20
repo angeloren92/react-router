@@ -18,7 +18,7 @@ function Prodotti() {
   return (
     <main className=" bg-dark  min-vh-100">
       <div className="container">
-        <section className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+        <section className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 py-5">
           {
             products.map(({ id, title, category, description, image, price, rating }) => (
               <div className="col g-4" key={id}>

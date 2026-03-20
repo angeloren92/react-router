@@ -20,7 +20,7 @@ function AppHeader() {
                 <NavLink className="nav-link" to='/Prodotti'>Prodotti</NavLink>
               </li>
               <li>
-                <NavLink className="nav-link" to='/ChiSiamo'>ChiSiamo</NavLink>
+                <NavLink className="nav-link" to='/ChiSiamo'>Chi Siamo</NavLink>
               </li>
             </ul>
             <form className="d-flex mx-5" role="search">

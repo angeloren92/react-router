@@ -1,12 +1,12 @@
-import DefaultLayout from './layout/DefaultLayout'
 import HomePage from './pages/HomePage'
 import Prodotti from './pages/Prodotti'
 import ChiSiamo from './pages/ChiSiamo'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
 import LayoutDefault from './layout/DefaultLayout'
 
 function App() {
+
+  
 
   return (
     <>
