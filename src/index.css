@@ -1,6 +1,18 @@
 @import 'bootstrap';
 @import 'bootstrap-icons';
 
+.navbar {
+
+    img[alt~="Logo"]{
+        height: 5rem;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+    }
+
+}
+
 .card-body {
 
     img {
