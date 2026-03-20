@@ -7,7 +7,7 @@ function AppHeader() {
     <header>
       <div className="container-fluid p-0">
         <div className="d-flex justify-content-end gap-5">
-          <NavLink className="navbar-brand"><img src={Logo} alt="Logo Anazon" className="img-fluid m-2 mx-5" /></NavLink>
+          <NavLink className="navbar-brand" to="/"><img src={Logo} alt="Logo Anazon" className="img-fluid m-2 mx-5" /></NavLink>
           <nav className="navbar bg-dark navbar-expand-lg w-75 p-3" data-bs-theme="dark">
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -25,8 +25,8 @@ function AppHeader() {
                 </li>
               </ul>
               <form className="d-flex mx-5" role="search">
-                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button className="btn btn-outline-secondary" type="submit">Search</button>
+                <input className="form-control me-2" type="search" placeholder="Cerca" aria-label="Search" />
+                <button className="btn btn-outline-secondary" type="submit">Cerca</button>
               </form>
             </div>
           </nav>
