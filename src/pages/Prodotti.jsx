@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import AppProdottiCards from '../components/AppProdottiCards'
 
 const apiUrl = 'https://fakestoreapi.com'
 
@@ -6,6 +7,7 @@ function Prodotti() {
 
   const [products, setProducts] = useState([])
   const [currentProduct, setCurrentProduct] = useState({ id: 0 })
+  const [currentRating, setCurrentRating] = useState(0)
 
 
   useEffect(() => {
@@ -18,7 +20,8 @@ function Prodotti() {
 
   function handleProduct(element) {
     setCurrentProduct(element)
-    console.log(currentProduct)
+    setCurrentRating((element.rating.rate * 100) / 5)
+
 
   }
 
@@ -29,25 +32,10 @@ function Prodotti() {
           {
             products.map(element => (
               currentProduct.id === 0 && (
-                <div className="col g-4" key={element.id}>
-                  <div className="card bg-secondary-subtle h-100" onClick={() => handleProduct(element)}>
-                    <figure className="card-body d-flex flex-column justify-content-between align-items-center">
-                      <div className="position-relative">
-                        <img src={element.image} alt={element.title} className="img-fluid border bg-light rounded-3 p-5" />
-                        <figcaption className="position-absolute translate-middle fw-bold text-muted">{element.rating.rate} / {element.rating.count}</figcaption>
-                      </div>
-                      <h2 className="h5 text-start w-100 h-100 my-3">{element.title}</h2>
-                      <div className="d-flex justify-content-between w-100">
-                        <span className="text-muted">
-                          {element.category.toUpperCase()}
-                        </span>
-                        <span className="px-3 fs-5">
-                          € {element.price.toFixed(2)}
-                        </span>
-                      </div>
-                    </figure>
-                  </div>
-                </div>
+                <AppProdottiCards key={element.id}
+                element={element} 
+                handleProduct={handleProduct}
+                />
               )
             ))
           }
@@ -56,20 +44,32 @@ function Prodotti() {
           currentProduct.id !== 0 && (
             <section>
               <div className="col g-4">
-                <div className="card bg-secondary-subtle h-100">
-                  <figure className="card-body d-flex mb-0 row">
-                    <div className="col col-4 position-relative">
-                      <img src={currentProduct.image} alt={currentProduct.title} className="img-fluid border bg-light rounded-3 p-5" />
+                <div className="card bg-secondary-subtle position-relative h-100 w-100">
+                  <button className="btn back btn-warning position-absolute rounded-5">INDIETRO</button>
+                  <button className="btn position-absolute next z-1"><i className="bi bi-caret-right-fill"></i></button>
+                  <button className="btn position-absolute prev z-1"><i className="bi bi-caret-left-fill"></i></button>
+                  <figure className="card-body mb-0 d-flex gap-4 flex-wrap flex-lg-nowrap">
+                    <div className="d-flex justify-content-center align-items-center w-100">
+                      <img src={currentProduct.image} alt={currentProduct.title} className="img-fluid bg-light rounded-3 m-3 p-3" />
                     </div>
-                    <div className="col col-8">
-                      <h2 className="h5 text-start">{currentProduct.title}</h2>
-                      <small>{currentProduct.category.toUpperCase()}</small>
+                    <div className="d-flex flex-column px-5 py-3 py-lg-5">
+                      <h2 className="h3 text-start">{currentProduct.title}</h2>
+                      <small className="mb-3">{currentProduct.category.toUpperCase()}</small>
                       <p>{currentProduct.description}</p>
-                          {currentProduct.rating.rate} / {currentProduct.rating.count}
-                      <div>
-                        <span className="text-muted">
-                        </span>
-                        <span className="px-3 fs-5">
+                      <div className="d-flex justify-content-between align-items-end h-100">
+                        <div className="text-muted">
+                          <span>{currentProduct.rating.rate}
+                            <span className="px-2 rating" style={{ '--percent': `${currentRating}%` }}>
+                              <i className="bi bi-star-fill"></i>
+                              <i className="bi bi-star-fill"></i>
+                              <i className="bi bi-star-fill"></i>
+                              <i className="bi bi-star-fill"></i>
+                              <i className="bi bi-star-fill"></i>
+                            </span>
+                          </span>
+                          <span>({currentProduct.rating.count} Valutazioni)</span>
+                        </div>
+                        <span className="px-5 fs-5">
                           € {currentProduct.price.toFixed(2)}
                         </span>
                       </div>
