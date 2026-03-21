@@ -1,15 +1,40 @@
 import { useState } from "react"
 
 
-function AppProdottoCard({ currentProduct, currentRating, handleBackButton, handleProductButton }) {
-    
+function AppProdottoCard({ products, currentProduct, setCurrentProduct }) {
+
+    const [currentRating, setCurrentRating] = useState((currentProduct.rating.rate * 100) / 5)
+
+    function handleBackButton() {
+        setCurrentProduct({ id: 0 })
+    }
+
+    function handleProductButton(i) {
+        setCurrentProduct(products.find(element => {
+            return element.id === i ? { element } : 0;
+        })
+        )
+        setCurrentRating(products.find(element => {
+            return element.id !== i ? element.rating.rate : 0;
+        })
+        )
+    }
+
+
     return (
 
         <div className="col g-4 h-100">
             <div className="card bg-secondary-subtle position-relative h-100 shadow">
-                <button className="btn back btn-warning position-absolute rounded-5" onClick={handleBackButton}>INDIETRO</button>
-                <button className="btn position-absolute next z-1" onClick={() => handleProductButton(currentProduct.id + 1 )}><i className="bi bi-caret-right-fill"></i></button>
-                <button className="btn position-absolute prev z-1" onClick={() => handleProductButton(currentProduct.id - 1 )}><i className="bi bi-caret-left-fill"></i></button>
+                <button className="btn back btn-warning position-absolute rounded-5"
+                    onClick={handleBackButton}>INDIETRO</button>
+                <button className="btn btn-outline-light bg-transparent position-absolute next z-1 border-0"
+                    onClick={() => handleProductButton(currentProduct.id + 1)}
+                    disabled={currentProduct.id >= products.length}
+                ><i className="bi bi-caret-right-fill"></i></button>
+                <button className="btn btn-outline-light bg-transparent position-absolute prev z-1 border-0"
+                    onClick={() => handleProductButton(currentProduct.id - 1)}
+                    disabled={currentProduct.id === 1}
+                ><i className="bi bi-caret-left-fill"></i></button>
                 <figure className="card-body mb-0 d-flex flex-wrap align-items-center flex-lg-nowrap bg-light">
                     <div className="productCardImg d-flex justify-content-center mx-auto">
                         <img src={currentProduct.image} alt={currentProduct.title} className="img-fluid bg-light rounded-3 m-3 p-3" />
@@ -38,7 +63,7 @@ function AppProdottoCard({ currentProduct, currentRating, handleBackButton, hand
                     </div>
                 </figure>
             </div>
-        </div>
+        </div >
     )
 }
 

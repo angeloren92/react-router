@@ -4,11 +4,14 @@ import AppProdottoCard from "../../AppProdottoCard"
 
 const apiUrl = 'https://fakestoreapi.com'
 
-function Prodotti() {
 
+function Prodotti() {
   const [products, setProducts] = useState([])
   const [currentProduct, setCurrentProduct] = useState({ id: 0 })
-  const [currentRating, setCurrentRating] = useState(0)
+
+  function handleProduct(element) {
+    setCurrentProduct(element)
+  }
 
   useEffect(() => {
     fetch(`${apiUrl}/products`)
@@ -17,22 +20,6 @@ function Prodotti() {
         setProducts(data)
       })
   }, [])
-
-  function handleProduct(element) {
-    setCurrentProduct(element)
-    setCurrentRating((element.rating.rate * 100) / 5)
-  }
-
-  function handleBackButton() {
-    setCurrentProduct({ id: 0 })
-  }
-
-  function handleProductButton(i) {
-    setCurrentProduct(products.find(element => {
-      return element.id === i ? { element } : 0;
-    })
-    )
-  }
 
   return (
     <main className="min-vh-100">
@@ -55,10 +42,9 @@ function Prodotti() {
           currentProduct.id !== 0 && (
             <section className="row singleProductSection">
               <AppProdottoCard
+                products={products}
                 currentProduct={currentProduct}
-                currentRating={currentRating}
-                handleBackButton={handleBackButton}
-                handleProductButton={handleProductButton}
+                setCurrentProduct={setCurrentProduct}
               />
             </section>
           )

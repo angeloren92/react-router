@@ -37,16 +37,16 @@ img[alt~="Logo"] {
 .prev {
     top: 50%;
     font-size: 2.5rem;
-    color: rgba(36, 36, 36, 0.596);
+    color: rgba(36, 36, 36, 0.685);
     transform: translate(-50%, -50%);
 }
 
 .next {
-    left: 99%;
+    left: 98%;
 }
 
 .prev {
-    left: 1%;
+    left: 2%;
 }
 
 .back {
