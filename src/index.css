@@ -1,38 +1,22 @@
 @import 'bootstrap';
 @import 'bootstrap-icons';
 
+/* navbar */
+.navbar {
+    
+    border-radius: 0 0 0 1.5rem;
+    
+    .nav-link {
+        font-size: 1.5rem;
+    }
+    
+}
+
 img[alt~="Logo"] {
     height: 5rem;
 }
 
-.navbar {
-
-    border-radius: 0 0 0 1.5rem;
-
-    .nav-link {
-        font-size: 1.5rem;
-    }
-
-}
-
-.main-card:hover {
-    cursor: pointer;
-}
-
-.card-body {
-
-    img {
-        object-fit: contain;
-        object-position: center;
-        aspect-ratio: 1/1;
-    }
-
-    .rate {
-        right: -3.5rem;
-        bottom: -0.5rem;
-    }
-}
-
+/* buttons */
 .next,
 .prev {
     top: 50%;
@@ -54,6 +38,23 @@ img[alt~="Logo"] {
     bottom: 1rem;
 }
 
+/* main cards */
+
+.card-body {
+
+    img {
+        object-fit: contain;
+        object-position: center;
+        aspect-ratio: 1/1;
+    }
+
+    .rate {
+        right: -3.5rem;
+        bottom: -0.5rem;
+    }
+}
+
+
 .rating {
     display: inline-flex;
     background: linear-gradient(90deg,
@@ -69,14 +70,19 @@ img[alt~="Logo"] {
     min-height: 90vh;
 
     .card-body {
-        height: 80vh;
+        min-height: 80vh;
     }
 
     .productCardImg {
         min-width: 50%;
     }
 
-    productCardInfo {
-        min-width: 50%;
+    .description {
+        height: 20rem;
+        scrollbar-width: thin;
     }
+}
+
+.main-card:hover {
+    cursor: pointer;
 }
