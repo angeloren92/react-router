@@ -51,16 +51,32 @@ img[alt~="Logo"] {
 
 .back {
     right: 2rem;
-    bottom: -3rem;
+    bottom: 1rem;
 }
 
 .rating {
-  display: inline-flex;
-  background: linear-gradient(90deg, 
-    #ffc107 var(--percent), 
-    #5e55555e var(--percent)
-  );
+    display: inline-flex;
+    background: linear-gradient(90deg,
+            #ffc107 var(--percent),
+            #5e55555e var(--percent));
 
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.singleProductSection {
+
+    min-height: 90vh;
+
+    .card-body {
+        height: 80vh;
+    }
+
+    .productCardImg {
+        min-width: 50%;
+    }
+
+    productCardInfo {
+        min-width: 50%;
+    }
 }

@@ -7,9 +7,9 @@ function HomePage() {
   return (
     <main className="min-vh-100">
       <div className="container">
-        <section className="row row-cols-1 row-cols-md-2 py-5 g-3">
+        <section className="row row-cols-1 row-cols-md-2 py-5 g-5">
           <div className="col">
-            <div className="card bg-light h-100">
+            <div className="card bg-light h-100 shadow">
               <figure className="card-body text-center d-flex flex-column justify-content-between align-items-center">
                 <Link to="/Prodotti"><img src={imgProducts} alt="Img Products" className='img-fluid rounded-3' /></Link>
                 <h2 className='h3 my-3'>PRODOTTI AN&SORRISO</h2>
@@ -19,7 +19,7 @@ function HomePage() {
             </div>
           </div>
           <div className="col">
-            <div className="card bg-light h-100 ">
+            <div className="card bg-light h-100 shadow">
               <figure className="card-body text-center d-flex flex-column justify-content-between align-items-center">
                 <Link to="/ChiSiamo"><img src={imgChiSiamo} alt="Img Products" className='img-fluid rounded-3' /></Link>
                 <h2 className='h3 my-3'>CHI SIAMO & LA FILOSOFIA</h2>

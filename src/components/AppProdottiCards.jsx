@@ -3,11 +3,11 @@ function AppProdottiCards({ element, handleProduct }) {
 
 return (
     <div className="col g-4">
-        <div className="card bg-secondary-subtle h-100 main-card" onClick={() => handleProduct(element)}>
+        <div className="card bg-secondary-subtle h-100 main-card shadow" onClick={() => handleProduct(element)}>
             <figure className="card-body d-flex flex-column justify-content-between align-items-center">
                 <div className="position-relative">
                     <img src={element.image} alt={element.title} className="img-fluid border bg-light rounded-3 p-5" />
-                    <figcaption className="rate position-absolute translate-middle text-muted">{element.rating.rate}  ({element.rating.count} Valutazioni)</figcaption>
+                    <figcaption className="rate position-absolute translate-middle text-muted"><strong>{element.rating.rate}</strong>  ({element.rating.count} Valutazioni)</figcaption>
                 </div>
                 <h2 className="h5 text-start w-100 h-100 my-3">{element.title}</h2>
                 <div className="d-flex justify-content-between w-100">
