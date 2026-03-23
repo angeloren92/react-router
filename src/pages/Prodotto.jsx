@@ -26,7 +26,7 @@ function Prodotto() {
     } else {
         return (
             <div className="container">
-                <div className="row">
+                <div className="row singleProductSection">
                     <div className="col g-4 h-100">
                         <div className="card bg-secondary-subtle position-relative shadow">
                             <Link to='/Prodotti' className="btn back btn-outline-dark position-absolute rounded-4">INDIETRO</Link>
