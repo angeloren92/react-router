@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import AppProdottiCards from '../components/AppProdottiCards'
-import AppProdottoCard from "../../AppProdottoCard"
+import AppProdottoCard from "./Prodotto"
 
 const apiUrl = 'https://fakestoreapi.com'
 
@@ -31,21 +31,9 @@ function Prodotti() {
                 products.map(element => (
                   <AppProdottiCards key={element.id}
                     element={element}
-                    handleProduct={handleProduct}
                   />
                 ))
               }
-            </section>
-          )
-        }
-        {
-          currentProduct.id !== 0 && (
-            <section className="row singleProductSection">
-              <AppProdottoCard
-                products={products}
-                currentProduct={currentProduct}
-                setCurrentProduct={setCurrentProduct}
-              />
             </section>
           )
         }

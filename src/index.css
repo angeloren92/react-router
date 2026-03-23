@@ -34,8 +34,8 @@ img[alt~="Logo"] {
 }
 
 .back {
-    right: 2rem;
-    bottom: 1rem;
+    right: 1rem;
+    top: 1rem;
 }
 
 /* main cards */
@@ -78,7 +78,7 @@ img[alt~="Logo"] {
     }
 
     .description {
-        height: 20rem;
+        max-height: 20rem;
         scrollbar-width: thin;
     }
 }

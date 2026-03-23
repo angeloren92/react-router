@@ -7,7 +7,7 @@ function ChiSiamo() {
       <div className="container">
         <section className="row py-5">
           <div className="col g-4">
-            <div className="card bg-light h-100">
+            <div className="card bg-light h-100 shadow">
               <figure className="card-body row">
                 <h2 className='text-center mb-4 h1'>安 - Anazon: Tutto ciò che desideri, con il sorriso.</h2>
                 <hr />
